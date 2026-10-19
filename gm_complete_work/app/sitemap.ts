@@ -7,7 +7,7 @@ import { blogPosts } from "@/lib/blog";
 // an entry pointing at a route that doesn't exist yet would be a
 // broken/misleading sitemap link.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://example.com";
+  const base = "https://gm-classes-website.vercel.app";
   return [
     {
       url: base,
