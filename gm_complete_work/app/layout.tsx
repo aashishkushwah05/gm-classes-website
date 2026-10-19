@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title,
   verification: { google: "TMysVoTxei6BouFsESIgzvMixhP9RosK3aLQv0t7DiA" },
   description,
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://gm-classes-website.vercel.app"),
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },
   icons: { icon: "/icon.png", apple: "/icon.png" },
@@ -49,8 +49,8 @@ const jsonLd = {
     postalCode: s.pin,
     addressCountry: "IN",
   },
-  url: "https://example.com",
-  logo: "https://example.com/gm-logo.png",
+  url: "https://gm-classes-website.vercel.app",
+  logo: "https://gm-classes-website.vercel.app/gm-logo.png",
   areaServed: { "@type": "City", name: s.city },
   knowsAbout: [
     "School education",
@@ -75,7 +75,7 @@ const jsonLd = {
     {
       "@type": "WebSite",
       name: s.name,
-      url: "https://example.com",
+      url: "https://gm-classes-website.vercel.app",
       inLanguage: "en-IN",
       publisher: { "@type": "EducationalOrganization", name: s.fullName }
     }
