@@ -20,5 +20,5 @@ export const siteConfig = {
   maps: "https://maps.app.goo.gl/pdYaVLHDRvTz69Nm8?g_st=ac",
   instagram: "https://www.instagram.com/vinod_gupta3980",
   facebook: "",
-  youtube: "https://youtube.com/@gm_classes_khargone?si=21BH9OekmI2qfnF2",
+  youtube: "https://youtube.com/@gm_classess_khargone?si=afkRB63jpaUi3_lA",
 };
