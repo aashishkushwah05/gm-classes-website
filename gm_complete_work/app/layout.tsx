@@ -9,6 +9,7 @@ const description =
 
 export const metadata: Metadata = {
   title,
+  verification: { google: "TMysVoTxei6BouFsESIgzvMixhP9RosK3aLQv0t7DiA" },
   description,
   metadataBase: new URL("https://example.com"),
   robots: { index: true, follow: true },
