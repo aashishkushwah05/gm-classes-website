@@ -25,18 +25,18 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [language, setLanguage] = useState<"en" | "hi">("en");
   const [languageDialogOpen, setLanguageDialogOpen] = useState(false);
-  const [theme, setTheme] = useState<"system" | "light" | "dark">("system");
+  const [theme, setTheme] = useState<"system" | "light" | "dark">("light");
 
   useEffect(() => {
     const savedLanguage = window.localStorage.getItem("gm-classes-language");
     setLanguage(savedLanguage === "hi" ? "hi" : "en");
     const savedTheme = window.localStorage.getItem("gm-classes-theme");
-    const nextTheme = savedTheme === "dark" || savedTheme === "light" || savedTheme === "system" ? savedTheme : "system";
+    const nextTheme = savedTheme === "dark" || savedTheme === "light" || savedTheme === "system" ? savedTheme : "light";
     setTheme(nextTheme);
     applyTheme(nextTheme);
     const media = window.matchMedia("(prefers-color-scheme: dark)");
     const onSystemTheme = () => {
-      const selected = window.localStorage.getItem("gm-classes-theme") || "system";
+      const selected = window.localStorage.getItem("gm-classes-theme") || "light";
       if (selected === "system") applyTheme("system");
     };
     media.addEventListener("change", onSystemTheme);
@@ -190,9 +190,10 @@ export function Navbar() {
               aria-label={open ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={open}
               onClick={() => setOpen((value) => !value)}
-              className="grid size-10 place-items-center rounded-xl border border-[#2f2618] bg-white/5 text-[#f5f1e8] transition-colors hover:border-primary/50 hover:text-primary"
+              className={`inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-[#2f2618] bg-white/5 px-3 text-xs font-semibold text-[#f5f1e8] transition-colors hover:border-primary/50 hover:text-primary ${open ? "" : "gm-menu-attention"}`}
             >
-              {open ? <X className="size-5" /> : <Menu className="size-5" />}
+              {open ? <X className="size-4" /> : <Menu className="size-4" />}
+              <span>{open ? "Close" : "Main Menu"}</span>
             </button>
           </div>
         </div>
