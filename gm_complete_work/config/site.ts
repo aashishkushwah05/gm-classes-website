@@ -18,7 +18,7 @@ export const siteConfig = {
   pin: "451001",
   hours: "Mon – Sat · 8:00–10:00 AM & 1:00–8:00 PM",
   maps: "https://maps.app.goo.gl/pdYaVLHDRvTz69Nm8?g_st=ac",
-  instagram: "https://www.instagram.com/vinod_gupta3980",
+  instagram: "https://www.instagram.com/vinod_gupta3980?cplk=MXBzbnphd3hyZmMwcg==",
   facebook: "",
   youtube: "https://youtube.com/@gm_classess_khargone?si=afkRB63jpaUi3_lA",
 };
