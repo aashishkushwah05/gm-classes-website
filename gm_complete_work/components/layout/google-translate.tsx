@@ -19,8 +19,15 @@ export function GoogleTranslate() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const saved = window.localStorage.getItem("gm-classes-language");
-    const lang = saved === "hi" ? "hi" : "en";
+    // A fresh browser session always starts in English. A Hindi choice is kept
+    // only for the current tab session, including route changes and refreshes.
+    if (window.sessionStorage.getItem("gm-classes-language-session") !== "hi") {
+      window.sessionStorage.setItem("gm-classes-language-session", "en");
+      window.localStorage.setItem("gm-classes-language", "en");
+      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=${window.location.hostname}`;
+    }
+    const lang = window.sessionStorage.getItem("gm-classes-language-session") === "hi" ? "hi" : "en";
     const hasTranslateCookie = document.cookie.split("; ").some((c) => c.startsWith("googtrans="));
     if (lang === "hi" && !hasTranslateCookie) document.cookie = "googtrans=/en/hi; path=/";
     if (lang === "en" && hasTranslateCookie) {
@@ -62,7 +69,7 @@ export function GoogleTranslate() {
   // Google Translate rewrites the DOM. Re-apply the selected target after every
   // Next.js client-side route change so newly rendered page content is translated too.
   useEffect(() => {
-    const saved = window.localStorage.getItem("gm-classes-language");
+    const saved = window.sessionStorage.getItem("gm-classes-language-session");
     const target = saved === "hi" ? "hi" : "";
     const timers = [180, 650, 1200].map((delay) => window.setTimeout(() => {
       const select = document.querySelector<HTMLSelectElement>(".goog-te-combo");

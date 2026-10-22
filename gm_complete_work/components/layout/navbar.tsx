@@ -28,7 +28,8 @@ export function Navbar() {
   const [theme, setTheme] = useState<"system" | "light" | "dark">("light");
 
   useEffect(() => {
-    const savedLanguage = window.localStorage.getItem("gm-classes-language");
+    // Match the current tab session; new sessions begin in English.
+    const savedLanguage = window.sessionStorage.getItem("gm-classes-language-session");
     setLanguage(savedLanguage === "hi" ? "hi" : "en");
     const savedTheme = window.localStorage.getItem("gm-classes-theme");
     const nextTheme = savedTheme === "dark" || savedTheme === "light" || savedTheme === "system" ? savedTheme : "light";
@@ -60,6 +61,7 @@ export function Navbar() {
     setLanguage(next);
     setLanguageDialogOpen(false);
     window.localStorage.setItem("gm-classes-language", next);
+    window.sessionStorage.setItem("gm-classes-language-session", next);
     if (next === "hi") {
       document.cookie = `googtrans=/en/hi; path=/; max-age=31536000`;
     } else {
