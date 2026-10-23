@@ -181,7 +181,7 @@ export default function HomePage() {
                   <Image src="/faculty/apoorva-sen-director.jpg" alt="Mrs. Apoorva Sen, Director of GM Classes" fill sizes="(min-width:1024px) 32vw, 80vw" className="object-contain object-center" />
                 </div>
                 <div className="absolute -bottom-4 left-1/2 w-max -translate-x-1/2 rounded-2xl border border-border bg-background px-5 py-2.5 text-center shadow-[0_18px_40px_-24px_rgba(57,42,17,.35)]">
-                  <p className="text-sm font-semibold">Mrs. Apoorva Sen</p>
+                  <p className="text-sm font-semibold">Miss Apoorva Sen</p>
                   <p className="text-[11px] text-muted">Director</p>
                 </div>
               </Reveal>
