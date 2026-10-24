@@ -35,13 +35,13 @@ const jsonLd = {
   "@type": "WebPage",
   name: "Admissions | GM Classes",
   description: "Admission information and enquiry options for GM Classes in Jetapur, Khargone.",
-  url: "https://example.com/admissions",
+  url: "https://gm-classes-website.vercel.app/admissions",
   about: { "@type": "EducationalOrganization", name: s.fullName },
   mainEntity: {
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://example.com/" },
-      { "@type": "ListItem", position: 2, name: "Admissions", item: "https://example.com/admissions" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://gm-classes-website.vercel.app/" },
+      { "@type": "ListItem", position: 2, name: "Admissions", item: "https://gm-classes-website.vercel.app/admissions" },
     ],
   },
 };
