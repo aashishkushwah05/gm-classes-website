@@ -27,8 +27,14 @@ const admissionSteps = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
+  "@id": "https://gm-classes-website.vercel.app/#organization",
   name: s.fullName,
   alternateName: s.name,
+  url: "https://gm-classes-website.vercel.app",
+  description: s.about,
+  foundingDate: String(s.establishedYear),
+  founder: { "@type": "Person", name: "Vinod Kumar Gupta" },
+  employee: { "@type": "Person", name: "Apoorva Sen", jobTitle: "Director" },
   email: s.email,
   telephone: s.phones[0],
   address: {
@@ -39,7 +45,15 @@ const jsonLd = {
     postalCode: s.pin,
     addressCountry: "IN",
   },
-  sameAs: [s.instagram].filter(Boolean),
+  areaServed: { "@type": "City", name: s.city },
+  contactPoint: [{
+    "@type": "ContactPoint",
+    telephone: s.phones[0],
+    contactType: "admissions",
+    areaServed: "IN",
+    availableLanguage: ["en", "hi"],
+  }],
+  sameAs: [s.instagram, s.youtube?.split("?")[0]].filter(Boolean),
 };
 
 export default function ContactPage() {
