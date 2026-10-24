@@ -27,6 +27,8 @@ const jsonLd = {
       "@type": "EducationalOrganization",
       "@id": "https://gm-classes-website.vercel.app/#organization",
       name: s.fullName, alternateName: s.name, foundingDate: String(s.establishedYear),
+      founder: { "@type": "Person", name: "Vinod Kumar Gupta" },
+      employee: { "@type": "Person", name: "Apoorva Sen", jobTitle: "Director" },
       description: s.about, email: s.email, telephone: s.phones[0],
       address: { "@type": "PostalAddress", streetAddress: "Nahar Marg, Sanawad Road, Jetapur", addressLocality: s.city, addressRegion: s.state, postalCode: s.pin, addressCountry: "IN" },
       url: "https://gm-classes-website.vercel.app", logo: "https://gm-classes-website.vercel.app/gm-logo.png",
